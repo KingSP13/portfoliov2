@@ -1,21 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  font-family: 'Poppins';
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.navbar {
+  width: 100%;
+  height: 96px;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.navOptions {
+  display: flex;
+  gap: 45px;
+  justify-content: center;
+  max-width: 900px;
+}
+
+.skill-list {
+  margin: 60px auto 
+}
+
+.skills {
+  font-size: 18px;
+}
+
+.intro-text {
+  width: 450;
+  margin: 100px auto 0 auto;
+}
+
+p {
+  max-width: 600px;
+  text-align: left;
+  margin: auto;
+}
+
+img {
+  margin: auto;
+}
+
+section {
+  max-width: 700px;
+  margin: auto;
+  text-align: justify;
+}
+
+h1 {
+  font-size: 36px;
+  margin: 20px auto
+}
+
+h2 {
+  font-size: 26px;
+  text-align: center;
+}
+
+.home-section {
+  margin: 70px auto
+}
+
+.projects-title {
+  margin: 90px auto
+}
+
+.projects-section {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto
+}
+
+.project-card {
+  margin: 50px auto;
+  width: 40%;
+}
+
+.project-description {
+  text-align: center;
+}
+
+.whoami-section {
+  text-align: center;
+}
+
+.whoami-title {
+  text-align: center;
+  margin: 50px auto;
+}
+
+.profile {
+  width: 500px;
+  margin: 100px auto;
+}
+
+.profile-pic-name {
+  margin: 50px auto;
+  width: 100%;
+  text-align: center;
+}
+
+.profile-pic-img {
+  width: 300px;
+  margin: 50px auto;
+}
+
+.profile-resume {
+  width: 100%;
+}
+
+.social-section {
+  width: 100%;
+  height: 300px;
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
 }
