@@ -3,9 +3,9 @@ import {Navbar, HomeSection, ProjectsSection, WhoamiSection, SocialSection} from
 
 export default function Home() {
   return (
-    <body className="flex flex-wrap justify-center w-full">
+    <body>
       <Navbar />
-      <main className='max-w-3xl mx-40 mt-16 mb-20'>
+      <main className='max-w-3xl m-auto mt-16 mb-20'>
         <HomeSection />
         <ProjectsSection />
         <WhoamiSection />
