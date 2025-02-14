@@ -1,7 +1,20 @@
+'use client'
+
+import {useState} from 'react'
+
 export const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
-        <header className="w-full h-24 bg-black text-white flex">
-            <nav className="flex m-auto self-center gap-12 max-w-2xl">
+        <header className="w-full h-24 bg-black text-white flex max-lg:h-14">
+            <nav id='navbarWideScreen' className="flex m-auto self-center gap-12 max-w-2xl max-lg:hidden">
+                <a href="home-section">Home</a>
+                <a href="#projects-section">Projects</a>
+                <a href="#whoami-section">Who am i</a>
+                <a href="#social-section">Send me Hi</a>
+            </nav>
+            
+            <nav id='navbarMobile' className="flex m-auto self-center gap-12 max-w-2xl lg:hidden">
                 <a href="home-section">Home</a>
                 <a href="#projects-section">Projects</a>
                 <a href="#whoami-section">Who am i</a>
@@ -13,7 +26,7 @@ export const Navbar = () => {
 
 export const HomeSection = () => {
     return (
-        <section id="home-section" className="max-w-2xl m-auto text-justify">
+        <section id="home-section" className="max-w-2xl m-auto text-justify max-lg:mx-20">
             <h1 className="text-4xl my-8">
                 Freelancer WebDev.
             </h1>
@@ -37,14 +50,14 @@ export const HomeSection = () => {
 
 export const ProjectsSection = () => {
     return (
-        <section id="projects-section">
+        <section id="projects-section" className='max-lg:mx-20'>
           <div className="max-w-2xl m-auto text-justify">
               <h1 className="text-4xl my-8">Projects</h1>
               <p className="max-w-xl mt-20 mb-12 mx-auto">
                 Here I can show you a little more about what I'm most proud of in each project I've been involved in. I will point out the main technologies and learnings I obtained in each of them. Remembering that all free projects are available on my GitHub.
               </p>
           </div>
-          <div className="grid grid-cols-2 gap-16">
+          <div className="grid grid-cols-2 gap-16 max-lg:grid-cols-1 max-lg:gap-0">
               <article className="m-auto text-justify">
                 <a href="https://kingsp13.github.io/amazon-clone/" target="_blank">
                     <h2 className="h-fit text-2xl my-8">
@@ -97,8 +110,8 @@ export const ProjectsSection = () => {
 
 export const WhoamiSection = () => {
     return (
-        <section id="whoami-section" className="max-w-2xl m-auto text-justify">
-            <h1 className="text-4xl my-20">
+        <section id="whoami-section" className="max-w-2xl m-auto text-justify max-lg:mx-20">
+            <h1 className="text-4xl my-20 max-lg:my-10">
                 Who am I
             </h1>
             <div>
@@ -106,7 +119,7 @@ export const WhoamiSection = () => {
                     IGOR OLIVEIRA LIMA
                 </h1>
             </div>
-            <p className="max-w-xl my-20 mx-auto text-center">
+            <p className="max-w-xl my-20 mx-auto text-center max-lg:my-10">
                 Atuando desde 2018 com suporte técnico, tenho experiência como técnico field service, ou seja, técnico de campo e lidando com pequenas e grandes empresas,  triagem de chamados, gerenciamento de urgência, gestão de acessos e SegInf IAM, atualmente em transição de carreira para desenvolvimento e no último período da formação em ADS, crio projetos com JavaScript, React e TailwindCSS. Possuo adaptabilidade a diferentes temas e audiências, comunicação assertiva e soluções disruptivas como qualidades relevantes para a função
             </p>
         </section>

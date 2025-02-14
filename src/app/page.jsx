@@ -3,6 +3,8 @@ import {Navbar, HomeSection, ProjectsSection, WhoamiSection, SocialSection} from
 
 export default function Home() {
   return (
+    <>
+
     <body>
       <Navbar />
       <main className='max-w-3xl m-auto mt-16 mb-20'>
@@ -14,5 +16,6 @@ export default function Home() {
         <SocialSection />
       </footer>
     </body>
+    </>
   )
 }
