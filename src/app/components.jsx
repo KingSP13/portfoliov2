@@ -68,25 +68,28 @@ export const ProjectsSection = () => {
                 </p>
               </article>
               <article className="m-auto text-justify">
-                <h2 className="h-fit text-2xl my-8">
-                    Title of the Project
-                </h2>
-                <img src="/project-image/project-amazon-small.png" alt="Project Image" />
+                <a href="https://kingsp13.github.io/to-do-list/" target="_blank">
+                    <h2 className="h-fit text-2xl my-8">
+                        Todo List
+                    </h2>
+                    <img src="/project-image/project-todolist-big.png" alt="Project Image" />
+                </a>
                 <p className="my-8">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, rem earum in et ipsam delectus nostrum nemo modi quam commodi deserunt adipisci aspernatur, tempore autem libero ullam neque dolore error.
-                  Quae ipsa, vel dolorem possimus enim natus ab voluptatem consequuntur ad? Ad dolore fugiat suscipit aliquam molestias, natus adipisci voluptates accusamus ex nihil cum consectetur eius delectus recusandae fugit sequi.
+                    This is a Todo List, one of my first projects when starting more complex concepts in programming, that i made with HTML, CSS and JavaScript that helped me to understand deeply the concept of local storage and a few of their uses, on screen right under the text box are a few instructions abou how to use it.            
                 </p>
               </article>
               <article className="m-auto text-justify">
-                <h2 className="h-fit text-2xl my-8">
-                    Title of the Project
-                </h2>
-                <img src="/project-image/project-amazon-small.png" alt="Project Image" />
+                <a href="https://kingsp13.github.io/rock-paper-scissors/" target="_blank">
+                    <h2 className="h-fit text-2xl my-8">
+                        Rock, Paper and Scissors
+                    </h2>
+                    <img src="/project-image/project-rps-big.png" alt="Project Image" />
+                </a>
                 <p className="my-8">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, rem earum in et ipsam delectus nostrum nemo modi quam commodi deserunt adipisci aspernatur, tempore autem libero ullam neque dolore error.
-                  Quae ipsa, vel dolorem possimus enim natus ab voluptatem consequuntur ad? Ad dolore fugiat suscipit aliquam molestias, natus adipisci voluptates accusamus ex nihil cum consectetur eius delectus recusandae fugit sequi.
+                    This is a game developed as part of one of the JavaScript courses I've taken. Here, I took my first steps in automating decision-making with the autoplay function, learned a few more concepts about Local Storage and its use in some applications, explored keybinding, and gained a deeper understanding of functions.            
                 </p>
               </article>
+
           </div>
         </section>
     )
