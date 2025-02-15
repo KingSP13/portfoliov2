@@ -5,20 +5,54 @@ import {useState} from 'react'
 export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
+    const closeMenu = () => setIsOpen(false)
+
     return (
-        <header className="w-full h-24 bg-black text-white flex max-lg:h-14">
+        <header id='navbarWide' className="w-full h-16 bg-black text-white flex fixed top-0 max-lg:h-16">
             <nav id='navbarWideScreen' className="flex m-auto self-center gap-12 max-w-2xl max-lg:hidden">
-                <a href="home-section">Home</a>
-                <a href="#projects-section">Projects</a>
-                <a href="#whoami-section">Who am i</a>
-                <a href="#social-section">Send me Hi</a>
+                <a href="home-section" className='hover:text-gray-400'>Home</a>
+                <a href="#projects-section" className='hover:text-gray-400'>Projects</a>
+                <a href="#whoami-section" className='hover:text-gray-400'>Who am i</a>
+                <a href="#social-section" className='hover:text-gray-400'>Send me Hi</a>
             </nav>
             
-            <nav id='navbarMobile' className="flex m-auto self-center gap-12 max-w-2xl lg:hidden">
-                <a href="home-section">Home</a>
-                <a href="#projects-section">Projects</a>
-                <a href="#whoami-section">Who am i</a>
-                <a href="#social-section">Send me Hi</a>
+
+
+
+
+            <nav id='navbarMobile' className="flex h-full w-full justify-between ml-12 lg:hidden">
+                <a onClick={() => window.scrollTo({ top: 0})} className='self-center cursor-pointer'>
+                    <img src="./assets/logo-black.png" alt="logo" className='h-14'/>
+                </a>
+                <button 
+                    className="ml-auto lg:hidden text-white text-2xl" 
+                    onClick={() => setIsOpen(true)}
+                >
+                    <img src="./assets/burguer.png" alt="burguer menu" className='h-10 self-center mr-3'/>
+                </button>
+                {isOpen && (
+                 <div 
+                     className="fixed inset-0 bg-black/50 backdrop-blur-sm md:hidden"
+                     onClick={closeMenu}
+                 ></div>
+                )}
+                <aside 
+                 className={`fixed top-0 right-0 w-[70%] h-full bg-black text-white transform transition-transform 
+                             ${isOpen ? "translate-x-0" : "translate-x-full"} md:hidden`}
+             >
+                 <button 
+                     className="absolute top-4 right-4 text-2xl text-white"
+                     onClick={closeMenu}
+                 >
+                 <img src="./assets/burguer.png" alt="burguer menu" className='h-10 self-center mr-3'/>
+                 </button>
+                 <nav className="flex flex-col gap-6 mt-16 px-6 text-lg" onClick={closeMenu}>
+                     <a href="#home-section" className="hover:text-gray-400">Home</a>
+                     <a href="#projects-section" className="hover:text-gray-400">Projects</a>
+                     <a href="#whoami-section" className="hover:text-gray-400">Who am I</a>
+                     <a href="#social-section" className="hover:text-gray-400">Send me Hi</a>
+                 </nav>
+             </aside>
             </nav>
         </header>
 )
@@ -26,7 +60,7 @@ export const Navbar = () => {
 
 export const HomeSection = () => {
     return (
-        <section id="home-section" className="max-w-2xl m-auto text-justify max-lg:mx-20">
+        <section id="home-section" className="max-w-2xl mx-auto mt-28 text-justify max-lg:mx-6">
             <h1 className="text-4xl my-8">
                 Freelancer WebDev.
             </h1>
@@ -50,10 +84,10 @@ export const HomeSection = () => {
 
 export const ProjectsSection = () => {
     return (
-        <section id="projects-section" className='max-lg:mx-20'>
+        <section id="projects-section" className='max-lg:mx-6'>
           <div className="max-w-2xl m-auto text-justify">
               <h1 className="text-4xl my-8">Projects</h1>
-              <p className="max-w-xl mt-20 mb-12 mx-auto">
+              <p className="max-w-xl mt-10 mb-10 mx-auto">
                 Here I can show you a little more about what I'm most proud of in each project I've been involved in. I will point out the main technologies and learnings I obtained in each of them. Remembering that all free projects are available on my GitHub.
               </p>
           </div>
@@ -110,7 +144,7 @@ export const ProjectsSection = () => {
 
 export const WhoamiSection = () => {
     return (
-        <section id="whoami-section" className="max-w-2xl m-auto text-justify max-lg:mx-20">
+        <section id="whoami-section" className="max-w-2xl m-auto text-justify max-lg:mx-6">
             <h1 className="text-4xl my-20 max-lg:my-10">
                 Who am I
             </h1>
@@ -120,18 +154,20 @@ export const WhoamiSection = () => {
                 </h1>
             </div>
             <p className="max-w-xl my-20 mx-auto text-center max-lg:my-10">
-                Atuando desde 2018 com suporte técnico, tenho experiência como técnico field service, ou seja, técnico de campo e lidando com pequenas e grandes empresas,  triagem de chamados, gerenciamento de urgência, gestão de acessos e SegInf IAM, atualmente em transição de carreira para desenvolvimento e no último período da formação em ADS, crio projetos com JavaScript, React e TailwindCSS. Possuo adaptabilidade a diferentes temas e audiências, comunicação assertiva e soluções disruptivas como qualidades relevantes para a função
-            </p>
+                Working with technical support since 2018, I have experience as a field service technician, that is, a field technician dealing with small and large companies, ticket screening, emergency management, access management and SegInf IAM, currently in a career transition to development and in the last period of training in ADS, I create projects with JavaScript, React and TailwindCSS. I have adaptability to different themes and audiences, assertive communication and disruptive solutions as relevant qualities for the role            </p>
         </section>
     )
 }
 
 export const SocialSection = () => {
     return (
-        <section id="social-section" className="max-w-2xl w-2/4 m-auto flex justify-around">
-            <a href="https://www.linkedin.com/in/igor-oliveira-lima/" target="_blank">LinkedIn</a>
-            <a href="mailto:ol.igor98@gmail.com" target="_blank">Mail</a>
-            <a href="https://github.com/KingSP13" target="_blank">GitHub</a>
+        <section id="social-section" className="max-w-2xl w-2/4 m-auto flex justify-around items-center" >
+            <a onClick={() => window.scrollTo({ top: 0})} className='self-center cursor-pointer'>
+                <img src="./assets/logo-black.png" alt="logo" className='h-14 self-center max-lg:hidden'/>
+            </a>
+            <a href="https://www.linkedin.com/in/igor-oliveira-lima/" target="_blank" className='hover:text-gray-400'>LinkedIn</a>
+            <a href="mailto:ol.igor98@gmail.com" target="_blank" className='hover:text-gray-400'>Mail</a>
+            <a href="https://github.com/KingSP13" target="_blank" className='hover:text-gray-400'>GitHub</a>
         </section>
     )
 }
