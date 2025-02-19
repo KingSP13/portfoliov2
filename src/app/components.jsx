@@ -173,7 +173,7 @@ export const WhoamiSection = () => {
             </p>
             <div className="flex">
                 <button className="m-auto text-black w-full bg-white rounded-md p-2 hover:bg-marrom-bombom border-solid border-2 border-white hover:text-white transition-all duration-300">
-                    <a href="../../public/assets/IGOR OLIVEIRA LIMA - DESENVOLVEDOR.pdf" download>
+                    <a href="/assets/IGOR OLIVEIRA LIMA - DESENVOLVEDOR.pdf" download>
                         Download my CV
                     </a>
                 </button>
