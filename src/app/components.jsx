@@ -1,16 +1,33 @@
 'use client'
 
-import {useState} from 'react'
+import { useState, useEffect } from "react";
+
+import { scrollTop } from "./script";
 
 export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const closeMenu = () => setIsOpen(false)
 
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+      const handleScroll = () => {
+        setScrolled(window.scrollY > 50);
+      };
+
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
-        <header id='navbarWide' className="w-full h-16 bg-black text-white flex fixed top-0 max-lg:h-16">
+        <header id='pageHeader' className={`w-full text-white flex fixed top-0 ${
+            scrolled
+              ? " h-16 bg-black opacity-80 transition-all duration-300 ease-in-out "
+              : "bg-marrom-bombom h-24 transition-all duration-300 ease-in-out"
+          } `}>
             <nav id='navbarWideScreen' className="flex m-auto self-center gap-12 max-w-2xl max-lg:hidden">
-                <a href="home-section" className='hover:text-gray-400'>Home</a>
+                <a onClick={scrollTop} className='hover:text-gray-400'>Home</a>
                 <a href="#projects-section" className='hover:text-gray-400'>Projects</a>
                 <a href="#whoami-section" className='hover:text-gray-400'>Who am i</a>
                 <a href="#social-section" className='hover:text-gray-400'>Send me Hi</a>
@@ -18,11 +35,9 @@ export const Navbar = () => {
             
 
 
-
-
             <nav id='navbarMobile' className="flex h-full w-full justify-between ml-12 lg:hidden">
-                <a onClick={() => window.scrollTo({ top: 0})} className='self-center cursor-pointer'>
-                    <img src="./assets/logo-black.png" alt="logo" className='h-14'/>
+                <a onClick={scrollTop} className='self-center cursor-pointer'>
+                    <img src="./assets/logo.png" alt="logo" className='h-14'/>
                 </a>
                 <button 
                     className="ml-auto lg:hidden text-white text-2xl" 
@@ -32,13 +47,13 @@ export const Navbar = () => {
                 </button>
                 {isOpen && (
                  <div 
-                     className="fixed inset-0 bg-black/50 backdrop-blur-sm md:hidden"
+                     className="fixed inset-0 bg-black/50 backdrop-blur-sm lg:hidden"
                      onClick={closeMenu}
                  ></div>
                 )}
                 <aside 
                  className={`fixed top-0 right-0 w-[70%] h-full bg-black text-white transform transition-transform 
-                             ${isOpen ? "translate-x-0" : "translate-x-full"} md:hidden`}
+                             ${isOpen ? "translate-x-0" : "translate-x-full"} lg:hidden`}
              >
                  <button 
                      className="absolute top-4 right-4 text-2xl text-white"
@@ -47,7 +62,7 @@ export const Navbar = () => {
                  <img src="./assets/burguer.png" alt="burguer menu" className='h-10 self-center mr-3'/>
                  </button>
                  <nav className="flex flex-col gap-6 mt-16 px-6 text-lg" onClick={closeMenu}>
-                     <a href="#home-section" className="hover:text-gray-400">Home</a>
+                     <a onClick={scrollTop} className="hover:text-gray-400">Home</a>
                      <a href="#projects-section" className="hover:text-gray-400">Projects</a>
                      <a href="#whoami-section" className="hover:text-gray-400">Who am I</a>
                      <a href="#social-section" className="hover:text-gray-400">Send me Hi</a>
@@ -154,7 +169,15 @@ export const WhoamiSection = () => {
                 </h1>
             </div>
             <p className="max-w-xl my-20 mx-auto text-center max-lg:my-10">
-                Working with technical support since 2018, I have experience as a field service technician, that is, a field technician dealing with small and large companies, ticket screening, emergency management, access management and SegInf IAM, currently in a career transition to development and in the last period of training in ADS, I create projects with JavaScript, React and TailwindCSS. I have adaptability to different themes and audiences, assertive communication and disruptive solutions as relevant qualities for the role            </p>
+                Working with technical support since 2018, I have experience as a field service technician, that is, a field technician dealing with small and large companies, ticket screening, emergency management, access management and SegInf IAM, currently in a career transition to development and in the last period of training in ADS, I create projects with JavaScript, React and TailwindCSS. I have adaptability to different themes and audiences, assertive communication and disruptive solutions as relevant qualities for the role            
+            </p>
+            <div className="flex">
+                <button className="m-auto text-black w-full bg-white rounded-md p-2 hover:bg-marrom-bombom border-solid border-2 border-white hover:text-white transition-all duration-300">
+                    <a href="../../public/assets/IGOR OLIVEIRA LIMA - DESENVOLVEDOR.pdf" download>
+                        Download my CV
+                    </a>
+                </button>
+            </div>
         </section>
     )
 }
@@ -163,7 +186,7 @@ export const SocialSection = () => {
     return (
         <section id="social-section" className="max-w-2xl w-2/4 m-auto flex justify-around items-center" >
             <a onClick={() => window.scrollTo({ top: 0})} className='self-center cursor-pointer'>
-                <img src="./assets/logo-black.png" alt="logo" className='h-14 self-center max-lg:hidden'/>
+                <img src="./assets/logo.png" alt="logo" className='h-14 self-center max-lg:hidden'/>
             </a>
             <a href="https://www.linkedin.com/in/igor-oliveira-lima/" target="_blank" className='hover:text-gray-400'>LinkedIn</a>
             <a href="mailto:ol.igor98@gmail.com" target="_blank" className='hover:text-gray-400'>Mail</a>

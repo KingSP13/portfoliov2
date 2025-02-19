@@ -6,7 +6,14 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'marrom-bombom': '#5C4636'
+      },
+      fontFamily: {
+        optie: ['optie', 'serif'],
+      }
+    },
   },
   plugins: [],
 };
