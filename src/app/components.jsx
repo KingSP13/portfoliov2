@@ -21,9 +21,9 @@ export const Navbar = () => {
     }, []);
 
     return (
-        <header id='pageHeader' className={`w-full text-white flex fixed top-0 ${
+        <header id='pageHeader' className={`w-full text-white bg-opacity-80 flex fixed top-0 z-10 ${
             scrolled
-              ? " h-16 bg-black opacity-80 transition-all duration-300 ease-in-out "
+              ? " h-16 bg-black transition-all duration-300 ease-in-out "
               : "bg-marrom-bombom h-24 transition-all duration-300 ease-in-out"
           } `}>
             <nav id='navbarWideScreen' className="flex m-auto self-center gap-12 max-w-2xl max-lg:hidden">
@@ -52,7 +52,7 @@ export const Navbar = () => {
                  ></div>
                 )}
                 <aside 
-                 className={`fixed top-0 right-0 w-[70%] h-full bg-black text-white transform transition-transform 
+                 className={`fixed top-0 right-0 w-[70%] h-full bg-black text-white opacity-100 transform transition-transform 
                              ${isOpen ? "translate-x-0" : "translate-x-full"} lg:hidden`}
              >
                  <button 
@@ -107,7 +107,7 @@ export const ProjectsSection = () => {
               </p>
           </div>
           <div className="grid grid-cols-2 gap-16 max-lg:grid-cols-1 max-lg:gap-0">
-              <article className="m-auto text-justify">
+              <article className="m-auto text-justify hover:-translate-y-4 transition-all duration-300">
                 <a href="https://kingsp13.github.io/amazon-clone/" target="_blank">
                     <h2 className="h-fit text-2xl my-8">
                         Amazon Clone
@@ -118,7 +118,7 @@ export const ProjectsSection = () => {
                     Developed during the SuperSimpleDev JavaScript course, a clone project for the Amazon company website, starting from the initial responsive layout to implementing all functions such as interaction with the cart, local storage to preserve data when reloading the page, use of the DayJS library for calculation of dates. Implemented MVC design pattern.
                 </p>
               </article>
-              <article className="m-auto text-justify">
+              <article className="m-auto text-justify hover:-translate-y-4 transition-all duration-300">
                 <a href="https://projetopokedexsd.netlify.app/" target="_blank">
                     <h2 className="h-fit text-2xl my-8">
                         PokeHut Forum
@@ -129,7 +129,7 @@ export const ProjectsSection = () => {
                     Project in progress starting from a beginner project of building a "Pokedex", but with time and implementation of future improvements I hope to make it a social forum for user interactions, login, database, progression of interactions similar to those on the platform "Reddit" and data collection for the possibility of monetizing a salable project.
                 </p>
               </article>
-              <article className="m-auto text-justify">
+              <article className="m-auto text-justify hover:-translate-y-4 transition-all duration-300">
                 <a href="https://kingsp13.github.io/to-do-list/" target="_blank">
                     <h2 className="h-fit text-2xl my-8">
                         Todo List
@@ -140,7 +140,7 @@ export const ProjectsSection = () => {
                     This is a Todo List, one of my first projects when starting more complex concepts in programming, that i made with HTML, CSS and JavaScript that helped me to understand deeply the concept of local storage and a few of their uses, on screen right under the text box are a few instructions abou how to use it.            
                 </p>
               </article>
-              <article className="m-auto text-justify">
+              <article className="m-auto text-justify hover:-translate-y-4 transition-all duration-300">
                 <a href="https://kingsp13.github.io/rock-paper-scissors/" target="_blank">
                     <h2 className="h-fit text-2xl my-8">
                         Rock, Paper and Scissors
@@ -172,9 +172,9 @@ export const WhoamiSection = () => {
                 Working with technical support since 2018, I have experience as a field service technician, that is, a field technician dealing with small and large companies, ticket screening, emergency management, access management and SegInf IAM, currently in a career transition to development and in the last period of training in ADS, I create projects with JavaScript, React and TailwindCSS. I have adaptability to different themes and audiences, assertive communication and disruptive solutions as relevant qualities for the role            
             </p>
             <div className="flex">
-                <button className="m-auto text-black w-full bg-white rounded-md p-2 hover:bg-marrom-bombom border-solid border-2 border-white hover:text-white transition-all duration-300">
+                <button className="m-auto text-black w-full bg-white rounded-md p-2 hover:bg-yellow-950 hover:opacity-90 border-solid border-2 border-white hover:text-white transition-all duration-300">
                     <a href="/assets/IGOR OLIVEIRA LIMA - DESENVOLVEDOR.pdf" download>
-                        Download my CV
+                        Download my  Developer CV
                     </a>
                 </button>
             </div>
